@@ -47,6 +47,10 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo
             })).data;
+            if (releases.length <= 1) {
+              console.log('No previous releases');
+              return
+            }
             console.log('Previous release was: ' + releases[1].name);
             for (let release of releases.slice(1)) {
               if (release.name.includes(READ_VERSION))
