@@ -1,6 +1,6 @@
-package carpetextra.mixins;
+package carpetabp.mixins;
 
-import carpetextra.utils.BlockPlacer;
+import carpetabp.utils.BlockPlacer;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.BlockItem;

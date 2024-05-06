@@ -110,16 +110,3 @@ jobs:
           asset_path: build/libs/${{ steps.findjar.outputs.jarname }}
           asset_name: ${{ steps.findjar.outputs.jarname }}
           asset_content_type: application/java-archive
-      - name: Upload to Curseforge
-        uses: itsmeow/curseforge-upload@v3
-        with:
-          token: ${{ secrets.CF_API_TOKEN }}
-          project_id: 349240
-          game_endpoint: minecraft
-          file_path: build/libs/${{ steps.findjar.outputs.jarname }}
-          changelog_type: markdown
-          changelog: ${{ github.event.release.body }}
-          display_name: Carpet Extra v${{ needs.Get-Properties.outputs.carpet-version }} for ${{ steps.getbranchinfo.outputs.version }}
-          game_versions: 7499,8326,${{ steps.getbranchinfo.outputs.curse-versions }} #Fabric,Java 17,[version (s) for the branch]
-          relations: carpet:requiredDependency
-          release_type: ${{ needs.Get-Properties.outputs.release-type }}

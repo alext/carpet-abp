@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "carpetextra.mixins",
+  "package": "carpetabp.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "ServerPlayNetworkHandlerMixin",

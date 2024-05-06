@@ -1,4 +1,4 @@
-package carpetextra.utils;
+package carpetabp.utils;
 
 import org.jetbrains.annotations.Nullable;
 import net.minecraft.block.BedBlock;

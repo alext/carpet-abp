@@ -1,4 +1,4 @@
-package carpetextra.mixins;
+package carpetabp.mixins;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -13,7 +13,7 @@ public abstract class ServerPlayNetworkHandlerMixin
               at = @At(value = "INVOKE",
                        target = "Lnet/minecraft/util/math/Vec3d;subtract(Lnet/minecraft/util/math/Vec3d;)Lnet/minecraft/util/math/Vec3d;"),
               require = 0)
-    private Vec3d carpetextra_removeHitPosCheck(Vec3d hitVec, Vec3d blockCenter)
+    private Vec3d carpetabp_removeHitPosCheck(Vec3d hitVec, Vec3d blockCenter)
     {
         return Vec3d.ZERO;
     }
