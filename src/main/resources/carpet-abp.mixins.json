@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "carpetabp.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ServerPlayNetworkHandlerMixin",
+    "BlockItemMixin_accurateBlockPlacement"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

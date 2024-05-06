@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "carpet-extra",
+  "id": "carpet-abp",
   "version": "${version}",
 
-  "name": "Carpet Extra",
-  "description": "Additional, less vanilla additions to the carpet mod",
+  "name": "Carpet AccurateBlockPlacement",
+  "description": "Carpet addon to enable Tweakeroo's AccurateBlockPlacement on a server",
   "authors": [
     "gnembon, DeadlyMC, ImUrX, 2No2Name, ..."
   ],
   "contact": {
-    "homepage": "https://github.com/gnembon/carpet-extra",
-    "issues": "https://github.com/gnembon/carpet-extra/issues",
-    "sources": "https://github.com/gnembon/carpet-extra"
+    "homepage": "https://github.com/alext/carpet-abp",
+    "issues": "https://github.com/alext/carpet-abp/issues",
+    "sources": "https://github.com/alext/carpet-abp"
   },
 
-  "icon": "assets/carpet-extra/icon.png",
+  "icon": "assets/carpet-abp/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "carpetextra.CarpetExtraServer"
+      "carpetabp.CarpetABPServer"
     ]
   },
   "mixins": [
-    "carpet-extra.mixins.json"
+    "carpet-abp.mixins.json"
   ],
 
   "depends": {
