@@ -1,6 +1,5 @@
 package carpetextra.mixins;
 
-import carpetextra.CarpetExtraSettings;
 import carpetextra.utils.BlockPlacer;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -19,12 +18,10 @@ public class BlockItemMixin_accurateBlockPlacement
     ))
     private BlockState getAlternatePlacement(Block block, ItemPlacementContext context)
     {
-        if (CarpetExtraSettings.accurateBlockPlacement)
-        {
-            BlockState tryAlternative = BlockPlacer.alternativeBlockPlacement(block, context);
-            if (tryAlternative != null)
-                return tryAlternative;
-        }
+        BlockState tryAlternative = BlockPlacer.alternativeBlockPlacement(block, context);
+        if (tryAlternative != null)
+            return tryAlternative;
+
         return block.getPlacementState(context);
     }
 

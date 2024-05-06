@@ -2,7 +2,6 @@ package carpetextra;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
-import carpetextra.utils.CarpetExtraTranslations;
 import net.fabricmc.api.ModInitializer;
 
 import java.util.Map;
@@ -24,18 +23,5 @@ public class CarpetExtraServer implements CarpetExtension, ModInitializer
     public void onInitialize()
     {
         CarpetExtraServer.loadExtension();
-    }
-
-    @Override
-    public void onGameStarted()
-    {
-        // let's /carpet handle our few simple settings
-        CarpetServer.settingsManager.parseSettingsClass(CarpetExtraSettings.class);
-    }
-
-    @Override
-    public Map<String, String> canHasTranslations(String lang)
-    {
-        return CarpetExtraTranslations.getTranslationFromResourcePath(lang);
     }
 }

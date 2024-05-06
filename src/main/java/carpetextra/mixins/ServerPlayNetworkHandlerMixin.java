@@ -5,7 +5,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.util.math.Vec3d;
-import carpetextra.CarpetExtraSettings;
 
 @Mixin(ServerPlayNetworkHandler.class)
 public abstract class ServerPlayNetworkHandlerMixin
@@ -16,11 +15,6 @@ public abstract class ServerPlayNetworkHandlerMixin
               require = 0)
     private Vec3d carpetextra_removeHitPosCheck(Vec3d hitVec, Vec3d blockCenter)
     {
-        if (CarpetExtraSettings.accurateBlockPlacement)
-        {
-            return Vec3d.ZERO;
-        }
-
-        return hitVec.subtract(blockCenter);
+        return Vec3d.ZERO;
     }
 }

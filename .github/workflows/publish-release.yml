@@ -123,29 +123,3 @@ jobs:
           game_versions: 7499,8326,${{ steps.getbranchinfo.outputs.curse-versions }} #Fabric,Java 17,[version (s) for the branch]
           relations: carpet:requiredDependency
           release_type: ${{ needs.Get-Properties.outputs.release-type }}
-  Update-Rules-to-Readme:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Carpet extra sources
-        uses: actions/checkout@v3
-        with:
-          ref: master
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: 17
-          cache: 'gradle'
-      - name: Update README page
-        run: |
-          chmod +x gradlew
-          ./gradlew runServer --args="-- -carpetDumpRules -dumpFilter=extras -dumpPath ../rules.md"
-          cat README-header.md rules.md > README.md
-      - name: Commit updated Readme page
-        continue-on-error: true
-        run: |
-          git add README.md
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git commit -m "Update Readme for '${{ github.event.release.name }}'" || exit 0
-          git push

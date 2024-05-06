@@ -1,9 +1,0 @@
-{
-  // Categories:
-  "carpet.category.extras": "extras",
-
-  // Rules:
-
-  // accurateBlockPlacement
-  "carpet.rule.accurateBlockPlacement.desc": "Client can provide alternative block placement."
-}
