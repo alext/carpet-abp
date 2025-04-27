@@ -11,7 +11,7 @@ jobs:
       extra-branch-name: ${{ steps.properties.outputs.release-extra-branch-name }}
     steps:
       - name: Checkout the sources
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Determine release type
         id: type
         run: |
@@ -72,11 +72,11 @@ jobs:
             echo "branchname=${{ needs.Get-Properties.outputs.extra-branch-name }}" >> $GITHUB_OUTPUT
           fi
       - name: Checkout the sources
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ steps.getbranchinfo.outputs.branchname }}
       - name: Set up JDK 21
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: 21
@@ -91,7 +91,7 @@ jobs:
           output="$(find build/libs/ ! -name "*-dev.jar" ! -name "*-sources.jar" -type f -printf "%f\n")"
           echo "jarname=$output" >> $GITHUB_OUTPUT
       - name: Save build artifacts in the action
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Artifacts for ${{ matrix.branch }}
           path: build/libs
