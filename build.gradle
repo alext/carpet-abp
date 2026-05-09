@@ -5,11 +5,10 @@ plugins {
 
 repositories {
 	maven {
-		url 'https://masa.dy.fi/maven'
+		url = 'https://masa.dy.fi/maven'
 	}
 }
 
-archivesBaseName = project.archives_base_name
 version = project.minecraft_version+'-'+project.mod_version
 group = project.maven_group
 
