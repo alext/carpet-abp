@@ -38,7 +38,7 @@ jobs:
           fi
       - uses: actions/github-script@v6
         env:
-          READ_VERSION: ${{ steps.properties.outputs.mod_version }}
+          READ_VERSION: ${{ steps.properties.outputs.minecraft_version }}-${{ steps.properties.outputs.mod_version }}
         with:
           script: |
             const { READ_VERSION } = process.env;
